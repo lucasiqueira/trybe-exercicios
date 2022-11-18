@@ -16,3 +16,9 @@ h1 em{
     border: solid black 6px;
     font-size: 40px;
 }
+li {
+    font-size: 20px;
+}
+li em {
+    font-weight: bold;
+}
