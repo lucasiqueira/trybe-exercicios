@@ -1,0 +1,46 @@
+div:hover {
+    border-color: black;
+    border-style: solid;
+}
+div:nth-of-type(1) {
+    background-color: blue;
+    color: white;
+}
+div:nth-of-type(2) {
+    background-color: green;
+    color: white;
+}
+div:nth-of-type(3) {
+    background-color: violet;
+    height: 200px;
+}
+div:nth-of-type(4) {
+    background-color:darkblue;
+    color: white;
+}
+div:nth-of-type(5) {
+    background-color: wheat;
+}
+div:nth-of-type(1) h3 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    font-style: italic;
+}
+div:nth-of-type(2) h3 {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 60px;
+}
+div:nth-of-type(3) h3 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+    font-style: italic;
+}
+div:nth-of-type(4) h3 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 56px;
+}
+div:nth-of-type(5) h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-style: italic;
+}
