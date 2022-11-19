@@ -22,3 +22,10 @@ li {
 li em {
     font-weight: bold;
 }
+
+ul:nth-of-type(1) li:not(:nth-of-type(n+4)) {
+    color: blue;
+}
+.bg-pink {
+    background-color: pink;
+}
