@@ -29,3 +29,23 @@ ul:nth-of-type(1) li:not(:nth-of-type(n+4)) {
 .bg-pink {
     background-color: pink;
 }
+.stackoverflow:hover {
+    color:orange;
+    font-weight: 800;
+}
+.w3schools:hover {
+    color:green;
+    font-weight: 800;
+}
+.mdn-web-docs:hover {
+    color:#001;
+    font-weight: 800;
+}
+.devdocs:hover {
+    color:yellow;
+    font-weight: 800;
+}
+.trybe:hover {
+    color:green;
+    font-weight: 800;
+}
