@@ -1,0 +1,32 @@
+* {
+    margin-top: 0px;
+}
+body{
+    background-color: #384252;
+    color: #e9d6af;
+    font-family: "Montserrat";
+}
+header {
+    text-align: center;
+}
+.title {
+    background-color: #c0efd2;
+    padding: 10px;
+    color: #384252;
+    border-bottom: 5px solid #e25858;
+    font-family: "Roboto";
+}
+.button-navbar {
+    width: 200px;
+    padding: 10px;
+    background-color: #c0efd2;
+    text-align: center;
+    margin: 20px 20px;
+    display: inline-block;
+    color: #384252;
+    border: solid 2px #c0efd2;
+}
+.button-navbar:hover {
+    background-color: #384252;
+    color:#c0efd2;
+}
