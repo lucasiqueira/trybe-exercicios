@@ -57,7 +57,17 @@ section h3 {
     width: 100%;
 }
 .info-table th{
-    width: 400px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    font-size: 1.3em;
+    color:#384252;
+    background-color: #c0efd2;
+}
+.info-table td{
+    width: 300px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
 }
 .references li {
     list-style: none;
@@ -66,4 +76,7 @@ section h3 {
 }
 .sidebar {
     margin: 50px;
+}
+caption {
+    display: none;
 }
