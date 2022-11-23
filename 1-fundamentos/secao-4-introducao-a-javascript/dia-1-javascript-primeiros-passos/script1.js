@@ -1,13 +1,15 @@
-let movie = "Avengers"; //string literal
-let score = 10.89; //number literal
-let isValid = true; //boolean
-let name; //undefined
-let color = null; //aguarda redefinição
+const myName = 'Lucas';
+const birthCity = 'Goiânia';
+let birthYear = 1994;
 
-score++;
+console.log(myName);
+console.log(birthCity);
+console.log(birthYear);
 
-console.log(score);
+birthYear = 2030;
 
-score--;
+console.log(birthYear);
 
-console.log(score);
+// birthCity = 'São Paulo'; Isso não funciona, pois está atribuindo um novo valor a uma variável constante.
+
+// console.log(birthCity);
