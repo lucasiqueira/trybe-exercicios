@@ -40,6 +40,17 @@ for (let j = 0; j < numbers.length; j += 1) {
 console.log('Maior número da sequência:', biggerNumber);
 
 // SEXTO PONTO
+let oddNumbers = 0;
+
+for (let u = 0; u < numbers.length; u += 1) {
+  if (numbers[u] % 2 === 1) {
+    oddNumbers += 1;
+  }
+}
+
+console.log('Quantidade de números ímpares:', oddNumbers);
+
+// SÉTIMO PONTO
 let smallerNumber = Number.POSITIVE_INFINITY;
 
 for (let i = 0; i < numbers.length; i += 1) {
@@ -49,3 +60,23 @@ for (let i = 0; i < numbers.length; i += 1) {
 }
 
 console.log('Menor número da sequência:', smallerNumber);
+
+// OITAVO PONTO
+let array25 = [];
+let num = 1;
+
+for (let q = 0; q < 25; q++) {
+  array25.push(num);
+  num += 1;
+}
+
+console.log(array25);
+
+// NONO PONTO
+let divisionByTwo = [];
+
+for (let r = 0; r < array25.length; r += 1) {
+  divisionByTwo.push(array25[r] / 2);
+}
+
+console.log(divisionByTwo);
