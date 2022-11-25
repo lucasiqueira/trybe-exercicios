@@ -14,3 +14,8 @@ console.log(searchForFirstTask);
 
 let searchForLastTask = tasksList[tasksList.length - 1];
 console.log(searchForLastTask);
+
+let indexOfTask = tasksList.indexOf('Reunião');
+console.log(indexOfTask);
+
+// 1
