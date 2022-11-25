@@ -2,7 +2,7 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 // PRIMEIRO PONTO
 for (let index = 0; index < numbers.length; index += 1) {
-  // console.log(numbers[index]);
+  console.log(numbers[index]);
 }
 
 // SEGUNDO PONTO
@@ -28,16 +28,16 @@ if (arithmeticAverage > 20) {
 }
 
 // QUINTO PONTO
-let biggerNumber = 0;
+let higherNumber = 0;
 
 
 for (let j = 0; j < numbers.length; j += 1) {
-  if (numbers[j] > biggerNumber) {
-    biggerNumber = numbers[j];
+  if (numbers[j] > higherNumber) {
+    higherNumber = numbers[j];
   }
 }
 
-console.log('Maior número da sequência:', biggerNumber);
+console.log('Maior número da sequência:', higherNumber);
 
 // SEXTO PONTO
 let oddNumbers = 0;
@@ -63,11 +63,9 @@ console.log('Menor número da sequência:', smallerNumber);
 
 // OITAVO PONTO
 let array25 = [];
-let num = 1;
 
-for (let q = 0; q < 25; q++) {
-  array25.push(num);
-  num += 1;
+for (let q = 1; q <= 25; q++) {
+  array25.push(q);
 }
 
 console.log(array25);
