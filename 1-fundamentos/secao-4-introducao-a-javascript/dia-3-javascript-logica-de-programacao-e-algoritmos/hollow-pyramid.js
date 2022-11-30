@@ -1,4 +1,4 @@
-let number = 9;
+let number = 15;
 let accumulator = '';
 
 for (let index = 1; index <= number; index += 1) {
