@@ -9,10 +9,14 @@ const angle2 = 90;
 const angle3 = 60;
 
 function triangleTest (num1, num2, num3) {
-  if (num1 + num2 + num3 === 180) {
-    return true;
+  if (num1 > 0 && num2 > 0 && num3 >0) {
+    if (num1 + num2 + num3 === 180) {
+      return true;
+    } else {
+      return false;
+    }
   } else {
-    return false;
+    return 'Erro.'
   }
 }
 
