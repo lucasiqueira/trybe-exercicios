@@ -1,8 +1,8 @@
-function divideNumbers (num1, num2){
+function sum (num1, num2){
   return num1 + num2;
 }
 
-console.log(divideNumbers(3, 9));
-console.log(divideNumbers(3, 82));
-console.log(divideNumbers(5, 25));
-console.log(divideNumbers(-10, 10));
+console.log(sum(3, 9));
+console.log(sum(3, 82));
+console.log(sum(5, 25));
+console.log(sum(-10, 10));
