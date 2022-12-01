@@ -3,7 +3,7 @@
 const longestWord = (sentence) => {
   const array = sentence.split(' ');
   let longest = array[0];
-  for (word of array) {
+  for (const word of array) {
     if (word.length > longest.length) {
       longest = word;
     }
