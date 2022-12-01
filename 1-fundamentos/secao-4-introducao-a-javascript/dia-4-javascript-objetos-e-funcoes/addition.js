@@ -1,8 +1,8 @@
-function multiplicate (num1, num2){
+function divideNumbers (num1, num2){
   return num1 + num2;
 }
 
-console.log(multiplicate(3, 9));
-console.log(multiplicate(3, 82));
-console.log(multiplicate(5, 25));
-console.log(multiplicate(-10, 10));
+console.log(divideNumbers(3, 9));
+console.log(divideNumbers(3, 82));
+console.log(divideNumbers(5, 25));
+console.log(divideNumbers(-10, 10));
