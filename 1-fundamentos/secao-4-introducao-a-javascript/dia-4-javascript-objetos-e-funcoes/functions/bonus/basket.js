@@ -19,7 +19,7 @@ const basket = [
   'Abacate', 'Jaca', 'Jaca', 'Abacate', 'Uva', 'Laranja',
   'Pera', 'Melancia', 'Jaca', 'Pera', 'Laranja', 'Jaca',
   'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
-  'Banana', 'Pera', 'Abacate', 'Uva',
+  'Banana', 'Pera', 'Abacate', 'Uva', 'Beterraba',
 ];
 
 const fruitCounter = (array) => {
@@ -35,10 +35,8 @@ const fruitCounter = (array) => {
   for (let index = 0; index < array.length; index += 1) {
     fruits[array[index]] += 1;
   }
-  console.log(fruits);
-
   for (key in fruits) {
-    result += `${fruits[key]} ${key}s, `
+    result += `${fruits[key]} ${key}${fruits[key] != 1 ? 's' : '' }, `
   }
   console.log(result);
 }
