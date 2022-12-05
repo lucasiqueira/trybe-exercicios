@@ -27,7 +27,29 @@ const encode = (sentence) => { // função que irá codificar a frase com os sí
 }
 
 const decode = (sentence) => { // função que irá decodificar a frase, retornando ao seu valor original
-
+  const restoredSentece = [];
+  for (let index = 0; index < sentence.length; index += 1) {
+    switch (sentence[index]) {
+      case '1':
+        restoredSentece.push('a');
+        break;
+      case '2':
+        restoredSentece.push('e');
+        break;
+      case '3':
+        restoredSentece.push('i');
+        break;
+      case '4':
+        restoredSentece.push('o');
+        break;
+      case '5':
+        restoredSentece.push('u');
+        break;
+      default:
+        restoredSentece.push(sentence[index])
+    }
+  }
+  return restoredSentece.join('');
 }
 
 const test1 = 'hello';
@@ -41,3 +63,11 @@ console.log(encode(test2));
 console.log(encode(test3));
 console.log(encode(test4));
 console.log(encode(test5));
+
+console.log();
+
+console.log(decode(encode(test1)));
+console.log(decode(encode(test2)));
+console.log(decode(encode(test3)));
+console.log(decode(encode(test4)));
+console.log(decode(encode(test5)));
