@@ -1,9 +1,7 @@
 const generatePhoneNumber = (array) => {
   let counter = 1;
-  const errorMessage1 = 'não é possível gerar um número de telefone com esses valores';
-  const errorMessage2 = 'Array com tamanho incorreto.'
   if (array.length != 11) {
-    return errorMessage2;
+    return 'Array com tamanho incorreto.';
   }
   for (let index = 0; index < array.length; index += 1) {
     for (let secondIndex = 0; secondIndex < array.length; secondIndex += 1) {
@@ -12,11 +10,12 @@ const generatePhoneNumber = (array) => {
       }
     }
     if (counter >= 3 || array[index] < 0 || array[index] > 9) {
-      return errorMessage1;
+      return 'não é possível gerar um número de telefone com esses valores';
     }
     counter = 1;
   }
-  return `(${array.slice(0, 2).join('')}) ${array.slice(2, 7).join('')}-${array.slice(7, 11).join('')}`
+  const ddd = array.slice(0, 2).join('');
+  return `(${ddd}) ${array.slice(2, 7).join('')}-${array.slice(7, 11).join('')}`;
 }
 
 const testArray1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
