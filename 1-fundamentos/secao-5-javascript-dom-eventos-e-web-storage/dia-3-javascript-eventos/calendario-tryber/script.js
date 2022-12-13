@@ -129,3 +129,17 @@ const addColorToTask = (color) => {
 
 addColorToTask('green');
 addColorToTask('purple');
+
+// Parte 9
+const taskLegend = document.getElementsByClassName('task');
+
+const taskSelected = (event) => {
+  if (event.target.className === 'task') {
+    event.target.classList.add('task-selected');
+  } else {
+    event.target.classList.remove('task-selected');
+  }
+}
+for (let index = 0; index < taskLegend.length; index += 1) {
+  taskLegend[index].addEventListener('click', taskSelected);
+}
