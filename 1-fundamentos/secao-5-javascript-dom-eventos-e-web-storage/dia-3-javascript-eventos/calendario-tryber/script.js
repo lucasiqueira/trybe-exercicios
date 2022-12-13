@@ -46,9 +46,9 @@ holidayButtonCreator("Feriados");
 
 // Parte 3
 const holidayButton = document.getElementById('btn-holiday');
+const holidayList = document.getElementsByClassName('holiday');
 
 holidayButton.addEventListener('click', () => {
-  const holidayList = document.getElementsByClassName('holiday');
   for (let index = 0; index < holidayList.length; index += 1) {
     if(holidayList[index].style.backgroundColor === 'green') {
       holidayList[index].style.backgroundColor = 'unset';
@@ -69,3 +69,20 @@ const fridayButtonCreator = (string) => {
 }
 
 fridayButtonCreator("Sexta-Feira");
+
+// Parte 5
+const fridayList = document.getElementsByClassName('friday');
+const fridayButton = document.getElementById('btn-friday');
+let fridayListArray = [];
+
+fridayButton.addEventListener('click', () => {
+  for (let index = 0; index < fridayList.length; index += 1) {
+    
+    if (fridayList[index].innerHTML === 'DAY') {
+      fridayList[index].innerHTML = fridayListArray[index];
+    } else {
+      fridayListArray[index] = fridayList[index].innerHTML;
+      fridayList[index].innerHTML = 'DAY';
+    }
+  }
+});
