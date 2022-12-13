@@ -33,12 +33,29 @@ for (let index = 0; index < decemberDaysList.length; index += 1) {
 }
 
 // Parte 2
-const holidayButton = (string) => {
-  const buttonsContainer = document.getElementsByClassName('buttons-container');
+const buttonsContainer = document.getElementsByClassName('buttons-container');
+
+const holidayButtonCreator = (string) => {
   const holidays = document.createElement('button');
   holidays.id = 'btn-holiday';
   holidays.innerHTML = string;
   buttonsContainer[0].appendChild(holidays);
 }
 
-holidayButton("Feriados");
+holidayButtonCreator("Feriados");
+
+// Parte 3
+const holidayButton = document.getElementById('btn-holiday');
+
+holidayButton.addEventListener('click', () => {
+  const holidayList = document.getElementsByClassName('holiday');
+  for (let index = 0; index < holidayList.length; index += 1) {
+    if(holidayList[index].style.backgroundColor === 'green') {
+      holidayList[index].style.backgroundColor = 'unset';
+      holidayList[index].style.color = '#777';
+    } else {
+      holidayList[index].style.backgroundColor = 'green';
+      holidayList[index].style.color = 'white';
+    }
+  }
+})
