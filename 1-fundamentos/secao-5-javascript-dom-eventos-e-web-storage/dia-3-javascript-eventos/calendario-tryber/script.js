@@ -31,3 +31,14 @@ for (let index = 0; index < decemberDaysList.length; index += 1) {
   }
   ulDays.appendChild(liDay);
 }
+
+// Parte 2
+const holidayButton = (string) => {
+  const buttonsContainer = document.getElementsByClassName('buttons-container');
+  const holidays = document.createElement('button');
+  holidays.id = 'btn-holiday';
+  holidays.innerHTML = string;
+  buttonsContainer[0].appendChild(holidays);
+}
+
+holidayButton("Feriados");
