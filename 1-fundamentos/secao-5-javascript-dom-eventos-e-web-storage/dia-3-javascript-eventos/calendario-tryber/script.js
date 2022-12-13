@@ -59,3 +59,13 @@ holidayButton.addEventListener('click', () => {
     }
   }
 })
+
+// Parte 4
+const fridayButtonCreator = (string) => {
+  const fridays = document.createElement('button');
+  fridays.id = 'btn-friday';
+  fridays.innerHTML = string;
+  buttonsContainer[0].appendChild(fridays);
+}
+
+fridayButtonCreator("Sexta-Feira");
