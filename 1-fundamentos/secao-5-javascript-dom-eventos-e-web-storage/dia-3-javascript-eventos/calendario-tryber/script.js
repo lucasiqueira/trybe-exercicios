@@ -107,3 +107,14 @@ const dayMouseOut = () => {
 
 dayMouseOver();
 dayMouseOut();
+
+// Parte 7
+const myTasks = document.getElementsByClassName('my-tasks');
+
+const createTask = (string) => {
+  const task = document.createElement('span');
+  task.innerHTML = string;
+  myTasks[0].appendChild(task);
+}
+
+createTask('Cozinhar');
