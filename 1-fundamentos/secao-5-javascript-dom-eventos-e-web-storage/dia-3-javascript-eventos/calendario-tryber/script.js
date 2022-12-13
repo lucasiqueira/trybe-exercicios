@@ -86,3 +86,24 @@ fridayButton.addEventListener('click', () => {
     }
   }
 });
+
+// Parte 6
+const days = document.getElementsByClassName('day');
+const dayMouseOver = () => {
+  for(let index = 0; index < days.length; index += 1) {
+    days[index].addEventListener('mouseover', (event) => {
+      event.target.style.fontSize = '30px';
+    });
+  }
+}
+
+const dayMouseOut = () => {
+  for(let index = 0; index < days.length; index += 1) {
+    days[index].addEventListener('mouseout', (event) => {
+      event.target.style.fontSize = '20px';
+    });
+  }
+}
+
+dayMouseOver();
+dayMouseOut();
