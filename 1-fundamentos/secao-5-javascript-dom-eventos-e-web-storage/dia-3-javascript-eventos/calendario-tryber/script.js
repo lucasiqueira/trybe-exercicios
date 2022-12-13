@@ -118,3 +118,14 @@ const createTask = (string) => {
 }
 
 createTask('Cozinhar');
+
+// Parte 8
+const addColorToTask = (color) => {
+  const taskLegend = document.createElement('div');
+  taskLegend.className = 'task';
+  taskLegend.style.backgroundColor = color;
+  myTasks[0].appendChild(taskLegend);
+}
+
+addColorToTask('green');
+addColorToTask('purple');
