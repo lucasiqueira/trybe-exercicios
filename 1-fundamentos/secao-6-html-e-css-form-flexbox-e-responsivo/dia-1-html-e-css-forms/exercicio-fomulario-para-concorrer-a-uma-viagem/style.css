@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+  width: 40%;
+  margin: auto;
+}
+
+.data-section {
+  border: 1px solid black;
+}
+
+.input-container {
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  border: none;
+}
+
+.input-field {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.destination-fieldset {
+  width: 67.5%;
+  text-align: center;
+  margin: auto;
+}
+
+.destination {
+  width: auto;
+}
+
+.button-section {
+  margin: 30px;
+}
+
+.button-section button {
+  width: 20%;
+  height: 30px;
+  font-size: 1.2em;
+}
