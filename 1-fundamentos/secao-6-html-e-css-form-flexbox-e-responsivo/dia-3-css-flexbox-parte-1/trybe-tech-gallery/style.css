@@ -24,6 +24,32 @@ header h3 {
   justify-content: center;
 }
 
+.tech-list {
+  margin: auto;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+
+}
+
+.tech-list div {
+  border: 1px gray solid;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgb(232, 232, 232);
+  text-align: center;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.tech-list div h4 {
+  color: rgb(55, 55, 55);
+  margin-bottom: 10px;
+}
+
 .header-img {
   width: 70px;
 }
@@ -35,4 +61,14 @@ header h3 {
 .social-img {
   width: 25px;
   margin-left: 10px;
+}
+
+hr {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
