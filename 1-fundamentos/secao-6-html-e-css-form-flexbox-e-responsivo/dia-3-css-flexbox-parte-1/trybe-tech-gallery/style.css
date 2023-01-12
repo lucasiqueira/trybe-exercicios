@@ -26,8 +26,7 @@ header h3 {
 
 .tech-list {
   margin: auto;
-  width: 600px;
-  height: 400px;
+  width: 60%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -36,13 +35,17 @@ header h3 {
 }
 
 .tech-list div {
-  border: 1px gray solid;
+  border: none;
   border-radius: 6px;
   margin: 10px 0;
   padding: 10px;
   background-color: rgb(232, 232, 232);
   text-align: center;
   box-shadow: 2px 2px 5px gray;
+}
+
+.tech-list div:hover {
+  box-shadow: 2px 2px 5px rgb(32, 191, 51);
 }
 
 .tech-list div h4 {
