@@ -1,0 +1,36 @@
+main {
+  background-color: aliceblue;
+}
+
+.container-fluid {
+  background-color:aliceblue;
+}
+
+.header {
+  background-color: rgb(40, 36, 36);
+  text-align: center;
+  padding: 20px;
+  color: azure;
+}
+
+.input-container {
+  margin-top: 15px;
+}
+
+#form-section {
+  border: 1px solid rgb(46, 44, 44);
+}
+
+#full-name, #email {
+  width: 100%;
+}
+
+.button-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.button-section button {
+  margin: 0 20px;
+  width: 200px;
+}
