@@ -19,7 +19,7 @@ const validate = new JustValidate(
 );
 
 function clearFields() {
-  const formElements = document.querySelectorAll('input');
+  const formElements = document.querySelectorAll('.input-field');
   const textArea = document.querySelector('textarea');
   for (let index = 0; index < formElements.length; index += 1) {
     const userInput = formElements[index];
@@ -104,7 +104,7 @@ validate
   ]);
 
 window.onload = function() {
-  const clearBtn = document.querySelector('#clear-btn');
+  const clearBtn = document.querySelector('#reset-btn');
   clearBtn.addEventListener('click', clearFields);
   const agreement = document.querySelector('#agreement');
   agreement.addEventListener('change', enableSubmit);
