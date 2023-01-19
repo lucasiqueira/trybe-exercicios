@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lucasiqueira/trybe-exercicios/issues"
   },
-  "homepage": "https://github.com/lucasiqueira/trybe-exercicios#readme"
+  "homepage": "https://github.com/lucasiqueira/trybe-exercicios#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
 }
