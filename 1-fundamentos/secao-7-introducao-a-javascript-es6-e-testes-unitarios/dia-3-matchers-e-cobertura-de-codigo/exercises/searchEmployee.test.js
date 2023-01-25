@@ -26,12 +26,12 @@ describe('Testes na função searchEmployee', () => {
   });
 
   test('Verifica se caso o id não conste no quadro de funcionários, retorna o erro "ID não identificada"', () => {
-    expect(earchEmployee('8578-6', 'firstName')).toThrow(); // verifica se o erro é lançado
-    expect(earchEmployee('8578-6', 'firstName')).toThrow(new Error ('ID não identificada')); // verifica a mensagem de erro
+    expect(() => {searchEmployee('8578-6', 'firstName')}).toThrow(); // verifica se o erro é lançado
+    expect(() => {searchEmployee('8578-6', 'firstName')}).toThrow(new Error('ID não identificada')); // verifica a mensagem de erro
   });
 
   test('Verifica se a informação que se quer acessar não existir, retorna o erro "Informação indisponível"', () => {
-    expect(earchEmployee('8579-6', 'birthDate')).toThrow(); // verifica se o erro é lançado
-    expect(earchEmployee('8579-6', 'birthDate')).toThrow(new Error ('Informação indisponível')); // verifica a mensagem de erro
+    expect(() => {searchEmployee('8579-6', 'birthDate')}).toThrow(); // verifica se o erro é lançado
+    expect(() => {searchEmployee('8579-6', 'birthDate')}).toThrow(new Error('Informação indisponível')); // verifica a mensagem de erro
   })
 })

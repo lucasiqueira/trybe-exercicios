@@ -40,7 +40,17 @@ const professionalBoard = [
 
 // Pesquisa
 const searchEmployee = (id, detail) => {
-  // Implemente seu código aqui
+  for (let index = 0; index < professionalBoard.length; index += 1) {
+    if (id === professionalBoard[index].id) {
+      if (!Object.keys(professionalBoard[index]).includes(detail)) {
+        throw new Error('Informação indisponível');
+      }
+      return professionalBoard[index][detail];
+    }
+  }
+  throw new Error('ID não identificada');
 };
+
+// console.log(searchEmployee('9852-2-2', 'lastName1'));
 
 module.exports = { searchEmployee, professionalBoard };
