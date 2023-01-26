@@ -72,3 +72,13 @@ const estudantes = [
     ],
   },
 ];
+
+// eslint-disable-next-line max-len
+// Função para buscar e imprimir o nome completo de todos os estudantes que estudam no turno da manhã.
+
+const getMorningStudents = () => estudantes.filter(
+  (student) => student.turno === 'Manhã',
+).map((e) => `${e.nome} ${e.sobrenome}`);
+
+// console.log(getMorningStudents());
+getMorningStudents();

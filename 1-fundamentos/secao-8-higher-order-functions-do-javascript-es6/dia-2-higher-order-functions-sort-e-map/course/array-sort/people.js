@@ -8,8 +8,8 @@ const people = [
 
 people.sort((a, b) => a.age - b.age);
 
-console.log(people);
+// console.log(people);
 
 people.sort((a, b) => b.age - a.age);
 
-console.log(people);
+// console.log(people);

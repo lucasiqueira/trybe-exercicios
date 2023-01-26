@@ -6,8 +6,8 @@ const updateProducts = (listProducts, listPrices) => listProducts.map((product, 
   { [product]: listPrices[index] }
 ));
 
-const listProducts = updateProducts(products, prices);
-console.log(listProducts);
+updateProducts(products, prices);
+
 // => [
 //   { Arroz: 2.99 },
 //   { Feijao: 3.99 },
