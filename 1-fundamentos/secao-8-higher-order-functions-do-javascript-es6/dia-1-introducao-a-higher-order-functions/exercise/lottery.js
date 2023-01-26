@@ -3,16 +3,11 @@ Desenvolva uma HOF que retorne o resultado de um sorteio. Essa HOF irá gerar um
 
 const lotteryResult = (bid, callback) => {
   const number = Math.ceil(Math.random() * 5);
-  return callback(bid, number);
+  return callback(bid, number) ? 'Parabéns, você ganhou' : 'Tente novamente';
   
 }
 
-const checkResult = (bid, sorted) => {
-  if (bid === sorted) {
-    return 'Parabéns, você ganhou'
-  }
-  return 'Tente novamente'
-}
+const checkResult = (bid, sorted) => bid === sorted;
 
 const array = [];
 
