@@ -20,39 +20,49 @@ const dragon = {
 
 const battleMembers = { mage, warrior, dragon };
 
-const dragonAttack = () => {
-  return Math.floor(Math.random() * (dragon.strength - 15)) + 15;
+const dragonAttack = (dragon) => {
+  const minDamage = 15
+  const maxDamage = Math.floor(Math.random() * dragon.strength);
+  const dragonDamage = (maxDamage > minDamage) ? maxDamage : minDamage;
+
+  return dragonDamage
 }
 
-const warriorAttack = () => {
-  return Math.floor(Math.random() * (warrior.strength * warrior.weaponDmg - warrior.strength)) + warrior.strength;
+const warriorAttack = (warrior) => {
+  const minDamage = warrior.strength
+  const maxDamage = Math.floor(Math.random() * (minDamage * warrior.weaponDmg));
+  const warriorDamage = (maxDamage > minDamage) ? maxDamage : minDamage;
+  
+  return warriorDamage;
 }
 
-const mageAttack = () => {
-  let damage;
+const mageAttack = (mage) => {
+  let mageDamage;
   let manaExpent = 15;
   if (mage.mana >= 15) {
-    damage = Math.floor(Math.random() * mage.intelligence) + mage.intelligence;
+    const minDamage = mage.intelligence
+    const maxDamage = Math.floor(Math.random() * minDamage);
+    mageDamage = (maxDamage > minDamage) ? maxDamage : minDamage;
   } else {
     manaExpent = 0;
-    damage = 'Não possui mana suficiente';
+    mageDamage = 'Não possui mana suficiente';
   }
-  return {damage: damage, manaExpent: manaExpent}
+  return {damage: mageDamage, manaExpent: manaExpent}
 }
 
 const gameActions = {
   warriorTurn: (warriorAttack) => {
-    warrior.damage = warriorAttack();
+    warrior.damage = warriorAttack(warrior);
     dragon.healthPoints -= warrior.damage;
   },
   mageTurn: (mageAttack) => {
-    let obj = mageAttack();
-    mage.damage = obj.damage;
-    mage.mana = obj.manaExpent;
+    let mageStats = mageAttack(mage);
+    mage.damage = mageStats.damage;
+    mage.mana -= mageStats.manaExpent;
     dragon.healthPoints -= mage.damage;
   },
   dragonTurn: (dragonAttack) => {
-    dragon.damage = dragonAttack();
+    dragon.damage = dragonAttack(dragon);
     mage.healthPoints -= dragon.damage;
     warrior.healthPoints -= dragon.damage;
   },
