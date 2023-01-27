@@ -82,3 +82,5 @@ const getMorningStudents = () => estudantes.filter(
 
 // console.log(getMorningStudents());
 getMorningStudents();
+
+module.exports = estudantes;
