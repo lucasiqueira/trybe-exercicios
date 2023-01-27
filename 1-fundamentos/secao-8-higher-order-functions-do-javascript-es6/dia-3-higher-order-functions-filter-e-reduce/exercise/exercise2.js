@@ -10,3 +10,5 @@ const getAlmostPublicDomainBooks = (data) => data.filter((bk) => (currYear - bk.
 // console.log(getAlmostPublicDomainBooks(books));
 
 getAlmostPublicDomainBooks(books);
+
+module.exports = getAlmostPublicDomainBooks;

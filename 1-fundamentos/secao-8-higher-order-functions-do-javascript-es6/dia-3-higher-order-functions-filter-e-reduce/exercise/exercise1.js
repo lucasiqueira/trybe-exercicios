@@ -6,3 +6,5 @@ const getScyFyAndFantasy = (database) => database.filter((book) => book.genre ==
 
 // console.log(getScyFyAndFantasy(books));
 getScyFyAndFantasy(books);
+
+module.exports = getScyFyAndFantasy;
