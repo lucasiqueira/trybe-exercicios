@@ -25,6 +25,14 @@ main {
   justify-content: space-between;
 }
 
+#img-placeholder {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   background-color: #20a327;
   color: white;
