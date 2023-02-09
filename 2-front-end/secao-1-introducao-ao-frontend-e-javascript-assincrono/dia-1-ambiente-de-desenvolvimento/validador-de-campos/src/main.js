@@ -13,7 +13,7 @@ const validateEmail = () => {
 };
 
 const validateCpf = () => {
-  const validation = validator.isLength(input.value, { min: 11, max: 11 });
+  const validation = validator.isTaxID(input.value, 'pt-BR');
   result.innerHTML = `O retorno do validador foi ${validation}`;
 };
 
