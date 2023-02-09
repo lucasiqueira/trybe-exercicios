@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+  </head>
+  <body class="container-fluid">
+    <header class="container-fluid header">
+      <h1>Concurso TrybeTRIP</h1>
+    </header>
+    <main>
+      <section id="form-section" class="container">
+        <form method="get" id="form">
+          <section id="data-section" class="container">
+            <fieldset class="input-container mb-3 input-group">
+              <label class="form-label" for="full-name">Nome completo</label>
+              <input type="text" name="full-name" id="full-name" class="input-field form-control">
+            </fieldset>
+            <fieldset class="input-container mb-3 input-group">
+              <label class="form-label" for="email">E-mail</label>
+              <input type="text" name="email" id="email" class="input-field form-control">
+            </fieldset>
+            <fieldset for="destination" id="destination" class="input-container">
+              <legend>Destino Preferido</legend>
+              <div class="form-check">
+                <input type="checkbox" name="destination" id="destination" class="form-check-input input-field"><label for="destination" class="form-check-label">Cidade</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" name="destination" id="destination" class="form-check-input input-field"><label for="destination" class="form-check-label">Campo</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" name="destination" id="destination" class="form-check-input input-field"><label for="destination" class="form-check-label">Praia</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" name="destination" id="destination" class="form-check-input input-field"><label for="destination" class="form-check-label">Montanhas</label>
+              </div>
+            </fieldset>
+            <fieldset class="input-container">
+              <label for="why">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
+              <textarea name="why" id="why" rows="5" max="500" class="input-field form-control"></textarea>
+            </fieldset>
+            <fieldset class="input-container">
+              <label for="date">Qual a melhor data para realizar sua viagem?</label>
+              <input type="text" name="date" id="date" class="form-control input-field" autocomplete="off">
+            </fieldset>
+            <fieldset class="input-container form-check">
+              <input type="checkbox" name="offers" id="offers" class="form-check-input input-field">
+              <label for="offers" class="form-check-label">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+            </fieldset>
+            <fieldset class="input-container form-check">
+              <input type="checkbox" name="agreement" id="agreement" class="form-check-input input-field">
+              <label for="agreement" class="form-check-label">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+            </fieldset>
+          </section>
+          <section id="button-section" class="button-section container">
+            <button type="submit" id="submit-btn" class="btn btn-success btn-lg" disabled>Enviar</button>
+            <button type="reset" id="reset-btn" class="btn btn-danger btn-lg">Limpar</button>
+          </section>
+        </form>
+      </section>
+    </main>
+    <script src="../node_modules/moment/moment.js"></script>
+    <script src="../node_modules/pikaday/pikaday.js"></script>
+    <script src="../node_modules/just-validate/dist/just-validate.production.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
