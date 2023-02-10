@@ -1,10 +1,15 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url('./assets/fonts/static/FiraCode-Medium.ttf') format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-image: url('../img/background.svg');
+  background-image: url('./assets/imgs/background.svg');
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +53,7 @@ header {
   font-weight: 400;
   font-size: 20px;
   line-height: 26px;
+  color: #898989;
 }
 
 button {
@@ -61,6 +67,7 @@ button {
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
+  margin-left: 14px;
 }
 
 main {
@@ -70,10 +77,52 @@ main {
 
 #preview-result {
   margin-top: 57px;
-  width: 900px;
-  height: 583px;
-  left: 306px;
-  top: 290px;
+  width: 840px;
+  height: 523px;
+  padding: 30px;
   background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+#preview-result::-webkit-scrollbar {
+  width: 12px;
+  margin-top: 100px;
+}
+
+#preview-result::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.coin-container {
+  box-sizing: border-box;
+  width: 150px;
+  height: 44px;
+  padding: 12px 19px 12px 8.51px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: inline-block;
+  margin: 14px 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coin-div {
+  display: flex;
+}
+
+.coin-div p {
+  margin-left: 6px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.coin-container > p {
+  color: #FFE713;
+  font-size: 13px;
+  line-height: 17px;
 }

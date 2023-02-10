@@ -6,19 +6,19 @@ O protótipo da aplicação está [nesse link](https://www.figma.com/file/H3gBEi
 ## Requisitos
 
 ### 1. Ambiente do Projeto
-- [ ] Criar um repositório do zero ou fazer um fork desse repositório (fique à vontade para fazer PRs quando terminar o desenvolvimento).
-- [ ] Iniciar projeto com NPM.
-- [ ] Estruturar o projeto para usar ESModules (usar `type` como `module` no `package.json` e nas tags `script`).
-- [ ] Instalar Vite como Dev Tool e `npm run dev`.
+- [x] Criar um repositório do zero ou fazer um fork desse repositório (fique à vontade para fazer PRs quando terminar o desenvolvimento).
+- [x] Iniciar projeto com NPM.
+- [x] Estruturar o projeto para usar ESModules (usar `type` como `module` no `package.json` e nas tags `script`).
+- [x] Instalar Vite como Dev Tool e `npm run dev`.
 
 ### 2. Estrutura da Aplicação
-- [ ] Estruturar o HTML de acordo com [protótipo](https://www.figma.com/file/H3gBEiF0F94VESCGx9DD17/Casa-de-C%C3%A2mbio?node-id=0%3A1).
-- [ ] Criar tags semânticas no HTML.
+- [x] Estruturar o HTML de acordo com [protótipo](https://www.figma.com/file/H3gBEiF0F94VESCGx9DD17/Casa-de-C%C3%A2mbio?node-id=0%3A1).
+- [x] Criar tags semânticas no HTML.
 
 ### 3. Interação com API
-- [ ] O endpoint da API que deverá ser usada é `https://api.exchangerate.host/latest?base=${moeda}`. 
-- [ ] A moeda a ser pesquisada deverá ser passada como o parâmetro `moeda` do _endpoint_.
-- [ ] Todas as moedas deverão ser listadas na tela.
+- [x] O endpoint da API que deverá ser usada é `https://api.exchangerate.host/latest?base=${moeda}`. 
+- [x] A moeda a ser pesquisada deverá ser passada como o parâmetro `moeda` do _endpoint_.
+- [x] Todas as moedas deverão ser listadas na tela.
 > [Link da documentação da API](https://exchangerate.host/#/docs) caso necessário
 
 ### 4. Tratamento de Erro
