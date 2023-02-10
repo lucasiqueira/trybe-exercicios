@@ -9,7 +9,6 @@ const dataPreview = document.getElementById('data-preview');
 consultButton.addEventListener('click', async () => {
   try {
     const cep = inputCEP.value;
-    console.log(cep);
     const data = await getAddress(cep);
     dataPreview.innerHTML = `${data.logradouro}, Bairro: ${data.bairro}, ${data.localidade} - ${data.uf}`;
   } catch (error) {
