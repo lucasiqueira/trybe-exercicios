@@ -1,3 +1,4 @@
+import getAddress from './getAddress';
 import './style.css';
 import Swal from 'sweetalert2';
 
@@ -7,13 +8,14 @@ const dataPreview = document.getElementById('data-preview');
 
 consultButton.addEventListener('click', async () => {
   try {
-    const response = await fetch(`https://viacep.com.br/ws/${inputCEP.value}/json/`);
-    const data = await response.json();
+    const cep = inputCEP.value;
+    console.log(cep);
+    const data = await getAddress(cep);
     dataPreview.innerHTML = `${data.logradouro}, Bairro: ${data.bairro}, ${data.localidade} - ${data.uf}`;
   } catch (error) {
     Swal.fire({
       title: 'Erro!',
-      text: 'CEP inválido',
+      text: error.message,
       icon: 'error',
       confirmButtonText: 'Sair',
     });
