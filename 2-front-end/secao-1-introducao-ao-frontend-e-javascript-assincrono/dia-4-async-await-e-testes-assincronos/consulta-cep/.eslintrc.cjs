@@ -12,4 +12,7 @@ module.exports = {
   },
   rules: {
   },
+  dependencies: {
+    sweetalert2: '^11.7.1',
+  },
 };

@@ -1,4 +1,5 @@
 import './style.css';
+import Swal from 'sweetalert2';
 
 const inputCEP = document.getElementById('input-cep');
 const consultButton = document.getElementById('consult-btn');
@@ -10,6 +11,11 @@ consultButton.addEventListener('click', async () => {
     const data = await response.json();
     dataPreview.innerHTML = `${data.logradouro}, Bairro: ${data.bairro}, ${data.localidade} - ${data.uf}`;
   } catch (error) {
-    dataPreview.innerHTML = error;
+    Swal.fire({
+      title: 'Erro!',
+      text: 'CEP inválido',
+      icon: 'error',
+      confirmButtonText: 'Sair',
+    });
   }
 });
