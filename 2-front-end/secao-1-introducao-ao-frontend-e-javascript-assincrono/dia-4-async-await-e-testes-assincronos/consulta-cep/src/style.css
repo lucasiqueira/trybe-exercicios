@@ -45,9 +45,10 @@ button:active {
   background-color: rgba(162, 224, 70, 0.5);
 }
 
-#data {
+#data-preview {
   background-color: rgba(255, 255, 255, 0.1);
   width: 90%;
   height: 100px;
   border-radius: 10px;
+  padding: 10px;
 }
