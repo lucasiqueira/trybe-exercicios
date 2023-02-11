@@ -1,6 +1,6 @@
 const previewCoinData = document.getElementById('preview-coin-data');
 
-export function createCoinElement(coin, rates, path) {
+export function createCoinElement(coin, rates) {
   const coinContainer = document.createElement('section');
   coinContainer.className = 'coin-container';
   previewCoinData.appendChild(coinContainer);

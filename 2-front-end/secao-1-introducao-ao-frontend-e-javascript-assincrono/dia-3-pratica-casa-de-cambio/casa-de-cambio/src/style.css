@@ -81,7 +81,7 @@ main {
   width: 100%;
   margin-top: 57px;
   max-width: 51.7%;
-  height: 523px;
+  height: 48vh;
   padding: 30px;
   background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
@@ -156,11 +156,11 @@ footer {
   text-align: center;
   margin-top: 30px;
   background-color: rgba(255, 255, 255, 0.06);
-  width: 100%;
-  position: absolute;
+  width: 30%;
+  border-radius: 6px;
   bottom: 0;
   color: rgba(217, 217, 217, 0.5);
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .icon {
@@ -185,6 +185,7 @@ footer {
 
   footer {
     position: relative;
+    width: 60%;
   }
 
   .icon {
@@ -226,6 +227,10 @@ footer {
 
   #preview-title {
     font-size: 15px;
+  }
 
+  footer {
+    width: 81%;
+    border-radius: 20px;
   }
 }
