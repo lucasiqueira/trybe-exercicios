@@ -8,6 +8,7 @@ const previewTitle = document.getElementById('preview-title');
 const previewCoinData = document.getElementById('preview-coin-data');
 
 const baseURL = 'https://api.exchangerate.host/latest?base=';
+const path = './src/assets/imgs/coins.svg';
 
 const validateNullInput = (input) => {
   if (!input) throw new Error('Você precisa passar uma moeda')
@@ -27,7 +28,7 @@ const runCoin = async () => {
     validateNullInput(selectedCoin);
     const response = await fetch(`${baseURL}${selectedCoin}`);
     const data = await response.json();
-    validateCorrectInput(selectedCoin, data);
+    validateCorrectInput(selectedCoin, data, path);
     if (!data) throw new Error('Moeda não existente');
     previewCoinData.innerHTML = '';
     previewTitle.innerHTML = `Valores referentes a 1 ${data.base}`;

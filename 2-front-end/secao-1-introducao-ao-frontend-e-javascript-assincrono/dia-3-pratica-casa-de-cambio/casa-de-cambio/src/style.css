@@ -68,6 +68,7 @@ button {
   font-size: 20px;
   line-height: 26px;
   margin-left: 14px;
+  color: black;
 }
 
 main {
@@ -149,6 +150,23 @@ main {
   color: #FFE713;
   font-size: 13px;
   line-height: 17px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.06);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: rgba(217, 217, 217, 0.5);;
+}
+
+
+.icon {
+  margin: 10px 10px 0 10px;
+  height: 30px;
+  color: rgba(255, 255, 255, 0.06);
 }
 
 @media screen and (max-width: 900px) {
