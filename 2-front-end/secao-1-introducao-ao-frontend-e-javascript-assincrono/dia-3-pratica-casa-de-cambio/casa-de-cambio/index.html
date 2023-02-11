@@ -10,11 +10,15 @@
     <header>
       <h1 id="title">Casa de <span id="exchange-word">Câmbio</span></h1>
       <p id="coin-label">Digite a moeda:</p>
-      <input type="text" placeholder="USD" id="coin-input">
-      <button id="search-btn">Pesquisar</button>
+      <div id="input-div">
+        <input type="text" placeholder="USD" id="coin-input">
+        <button id="search-btn">Pesquisar</button>
+      </div>
     </header>
     <main>
       <section id="preview-result">
+        <h3 id="preview-title"></h3>
+        <section id="preview-coin-data"></section>
       </section>
     </main>
     <script src="./src/main.js" type="module"></script>
