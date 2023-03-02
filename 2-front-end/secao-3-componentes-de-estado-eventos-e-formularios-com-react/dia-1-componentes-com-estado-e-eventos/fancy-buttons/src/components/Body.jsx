@@ -31,24 +31,26 @@ class Body extends Component {
     }))
     this.colorButton(this.state.clickNumberButton1, event.target);
   }
-  handleClick2 = () => {
-    this.setState((prevState, _props) => ({
+  handleClick2 = async (event) => {
+    await this.setState((prevState, _props) => ({
       clickNumberButton2: prevState.clickNumberButton2 + 1,
     }))
+    this.colorButton(this.state.clickNumberButton2, event.target);
   }
-  handleClick3 = () => {
-    this.setState((prevState, _props) => ({
+  handleClick3 = async (event) => {
+    await this.setState((prevState, _props) => ({
       clickNumberButton3: prevState.clickNumberButton3 + 1,
     }))
+    this.colorButton(this.state.clickNumberButton3, event.target);
   }
 
   
   render() {
     return (
       <>
-        <button onClick={this.handleClick1} id="1">{ this.state.clickNumberButton1 }</button>
-        <button onClick={this.handleClick2} id="2">{ this.state.clickNumberButton2 }</button>
-        <button onClick={this.handleClick3} id="3">{ this.state.clickNumberButton3 }</button>
+        <button onClick={this.handleClick1} id="1" className="even">{ this.state.clickNumberButton1 }</button>
+        <button onClick={this.handleClick2} id="2" className="even">{ this.state.clickNumberButton2 }</button>
+        <button onClick={this.handleClick3} id="3" className="even">{ this.state.clickNumberButton3 }</button>
       </>
     )
     
