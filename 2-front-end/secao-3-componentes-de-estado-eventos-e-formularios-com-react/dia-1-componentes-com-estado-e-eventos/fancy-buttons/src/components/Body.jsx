@@ -1,6 +1,5 @@
 import { Component } from "react";
 
-
 class Body extends Component {
   constructor() {
     super();
@@ -31,19 +30,20 @@ class Body extends Component {
     }))
     this.colorButton(this.state.clickNumberButton1, event.target);
   }
+
   handleClick2 = async (event) => {
     await this.setState((prevState, _props) => ({
       clickNumberButton2: prevState.clickNumberButton2 + 1,
     }))
     this.colorButton(this.state.clickNumberButton2, event.target);
   }
+
   handleClick3 = async (event) => {
     await this.setState((prevState, _props) => ({
       clickNumberButton3: prevState.clickNumberButton3 + 1,
     }))
     this.colorButton(this.state.clickNumberButton3, event.target);
   }
-
   
   render() {
     return (
