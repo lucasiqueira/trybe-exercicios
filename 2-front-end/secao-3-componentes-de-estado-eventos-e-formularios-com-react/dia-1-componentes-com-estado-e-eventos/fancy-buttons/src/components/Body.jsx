@@ -4,26 +4,39 @@ import { Component } from "react";
 class Body extends Component {
   constructor() {
     super();
-    this.handlerClick1 = this.handlerClick1.bind(this);
-    this.handlerClick2 = this.handlerClick2.bind(this);
-    this.handlerClick3 = this.handlerClick3.bind(this);
+    this.handleClick1 = this.handleClick1.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
+    this.handleClick3 = this.handleClick3.bind(this);
   }
 
-  handlerClick1() {
-    console.log('Button 1 clicked!');
+  state = {
+    clickNumberButton1: 0,
+    clickNumberButton2: 0,
+    clickNumberButton3: 0,
   }
-  handlerClick2() {
-    console.log('Button 2 clicked!');
+
+  handleClick1() {
+    this.setState((prevState, _props) => ({
+      clickNumberButton1: prevState.clickNumberButton1 + 1,
+    }))
   }
-  handlerClick3() {
-    console.log('Button 3 clicked!');
+  handleClick2() {
+    this.setState((prevState, _props) => ({
+      clickNumberButton2: prevState.clickNumberButton2 + 1,
+    }))
   }
+  handleClick3() {
+    this.setState((prevState, _props) => ({
+      clickNumberButton3: prevState.clickNumberButton3 + 1,
+    }))
+  }
+  
   render() {
     return (
       <>
-        <button onClick={this.handlerClick1}>Button 1</button>
-        <button onClick={this.handlerClick2}>Button 2</button>
-        <button onClick={this.handlerClick3}>Button 3</button>
+        <button onClick={this.handleClick1}>{ this.state.clickNumberButton1 }</button>
+        <button onClick={this.handleClick2}>{ this.state.clickNumberButton2 }</button>
+        <button onClick={this.handleClick3}>{ this.state.clickNumberButton3 }</button>
       </>
     )
     
