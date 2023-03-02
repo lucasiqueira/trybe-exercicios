@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #61dafb;
+}
+
+button {
+  width: 150px;
+  margin: 10px;
+  height: 150px;
+  font-size: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: antiquewhite;
+}
+
+.even {
+  background-color: green;
+}
