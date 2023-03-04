@@ -1,25 +1,26 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
 class Form extends Component {
   constructor() {
     super()
-
+    this.fileInput = React.createRef();
     this.state = {
       name: '',
       email: '',
       state: 'Select a state',
       aboutyou: '',
+      postgraduation: false,
     }
   }
 
   handleChange = ({target}) => {
-    const { name, value } = target
+    const { name } = target
+    const value = (target.type === 'checkbox') ? target.checked : target.value;
     this.setState({ [name]: value })
-    console.log(value);
   }
 
   render() {
-    const { name, email, state, aboutyou } = this.state;
+    const { name, email, state, aboutyou, postgraduation } = this.state;
     return(
       <div>
         <h1>State and React - Fantastic Technology or reaction to regionalism?</h1>
@@ -55,10 +56,19 @@ class Form extends Component {
               Email
               <input type="email" name="email" value={ email } onChange={ this.handleChange } />
             </label>
+            <br />
+            <label htmlFor="">
+              <input 
+                type="checkbox" 
+                name="postgraduation" 
+                id="postgraduation" 
+                value={ postgraduation } 
+                onChange={ this.handleChange }
+              />
+              Mark if you are post-graduated
+            </label>
           </fieldset>
-          <br />
           <fieldset>
-
             <label htmlFor="">
               About you:
               <textarea 
@@ -69,6 +79,12 @@ class Form extends Component {
                 value ={ aboutyou }
                 onChange={ this.handleChange }
               />
+            </label>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="">
+              Insert your documentation:
+              <input type="file" name="" id="" ref={this.fileInput} />
             </label>
           </fieldset>
         </form>
