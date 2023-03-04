@@ -12,13 +12,32 @@ class Form extends Component {
       state: 'Select a state',
       aboutYou: '',
       postgraduation: false,
+      formWithError: true,
     }
+  }
+
+  handleError = () => {
+    const { name, email, state, aboutYou, postgraduation } = this.state;
+    const errors = [
+      !name.length,
+      !email.match(/^\S+@\S+$/i),
+      (state==='Select a state'),
+      !aboutYou.length,
+      !postgraduation,
+    ]
+
+    const formError = errors.every((error) => error !== true)
+
+    this.setState({formWithError: !formError})
   }
 
   handleChange = ({target}) => {
     const { name } = target;
     const value = (target.type === 'checkbox') ? target.checked : target.value;
-    this.setState({ [name]: value });
+    this.setState(
+      { [name]: value }
+      );
+    this.handleError();
   }
 
   render() {
@@ -51,7 +70,11 @@ class Form extends Component {
               Mark if you are post-graduated
             </label>
           </fieldset>
-          <AboutYou handleChange={ this.handleChange } value={ aboutYou } />
+          <AboutYou
+            handleChange={ this.handleChange }
+            handleError={this.handleError}
+            value={ aboutYou }
+          />
           <fieldset>
             <label htmlFor="">
               Insert your documentation:

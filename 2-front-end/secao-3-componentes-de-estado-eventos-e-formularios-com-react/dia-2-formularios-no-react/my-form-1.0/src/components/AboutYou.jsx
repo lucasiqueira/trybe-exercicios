@@ -4,7 +4,9 @@ class AboutYou extends React.Component {
   render() {
     let error;
     const { handleChange, value } = this.props;
-    if (value.length > 140) error = 'This message should be a based tweet, not the new one!'
+    if (value.length > 140) {
+      error = 'This message should be a based tweet, not the new one!'
+    }
     return (
       <fieldset>
         <label htmlFor="">
