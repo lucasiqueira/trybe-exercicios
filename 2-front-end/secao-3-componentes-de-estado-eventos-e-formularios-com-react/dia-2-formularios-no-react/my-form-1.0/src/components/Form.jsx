@@ -74,8 +74,8 @@ class Form extends Component {
               <textarea 
                 name="aboutyou" 
                 id="aboutyou" 
-                cols="30" 
-                rows="10" 
+                cols="100" 
+                rows="5" 
                 value ={ aboutyou }
                 onChange={ this.handleChange }
               />
