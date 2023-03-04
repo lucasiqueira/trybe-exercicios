@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AboutYou from "./AboutYou";
+import State from "./State";
 
 class Form extends Component {
   constructor() {
@@ -8,44 +10,25 @@ class Form extends Component {
       name: '',
       email: '',
       state: 'Select a state',
-      aboutyou: '',
+      aboutYou: '',
       postgraduation: false,
     }
   }
 
   handleChange = ({target}) => {
-    const { name } = target
+    const { name } = target;
     const value = (target.type === 'checkbox') ? target.checked : target.value;
-    this.setState({ [name]: value })
+    this.setState({ [name]: value });
   }
 
   render() {
-    const { name, email, state, aboutyou, postgraduation } = this.state;
+    const { name, email, state, aboutYou, postgraduation } = this.state;
     return(
       <div>
         <h1>State and React - Fantastic Technology or reaction to regionalism?</h1>
         <form>
           <fieldset>
-            <label htmlFor="">
-              State
-              <select name="state" id="state" value={ state } onChange={ this.handleChange }>
-                <option value="">Select a state</option>
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
-                <option value="AR">Arkansas</option>
-                <option value="TN">Tennessee</option>
-                <option value="TX">Texas</option>
-                <option value="UT">Utah</option>
-                <option value="VT">Vermont</option>
-                <option value="VA">Virginia</option>
-                <option value="WA">Washington</option>
-                <option value="WV">West Virginia</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WY">Wyoming</option>
-              </select>
-
-            </label>
+            <State handleChange={ this.handleChange } state={ state }/>
             <br />
             <label htmlFor="">
               Name
@@ -68,19 +51,7 @@ class Form extends Component {
               Mark if you are post-graduated
             </label>
           </fieldset>
-          <fieldset>
-            <label htmlFor="">
-              About you:
-              <textarea 
-                name="aboutyou" 
-                id="aboutyou" 
-                cols="100" 
-                rows="5" 
-                value ={ aboutyou }
-                onChange={ this.handleChange }
-              />
-            </label>
-          </fieldset>
+          <AboutYou handleChange={ this.handleChange } aboutYou={ aboutYou } />
           <fieldset>
             <label htmlFor="">
               Insert your documentation:
