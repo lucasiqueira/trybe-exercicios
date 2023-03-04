@@ -2,7 +2,9 @@ import React from "react";
 
 class AboutYou extends React.Component {
   render() {
-    const { handleChange, aboutYou } = this.props;
+    let error;
+    const { handleChange, value } = this.props;
+    if (value.length > 140) error = 'This message should be a based tweet, not the new one!'
     return (
       <fieldset>
         <label htmlFor="">
@@ -12,10 +14,11 @@ class AboutYou extends React.Component {
             id="aboutYou" 
             cols="100" 
             rows="5" 
-            value ={ aboutYou }
+            value ={ value }
             onChange={ handleChange }
           />
         </label>
+        <div>{(error) ? error : ''}</div>
       </fieldset>
     )
   }

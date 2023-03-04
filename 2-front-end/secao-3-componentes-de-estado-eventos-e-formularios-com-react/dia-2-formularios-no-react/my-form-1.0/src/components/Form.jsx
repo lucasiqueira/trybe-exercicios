@@ -28,7 +28,7 @@ class Form extends Component {
         <h1>State and React - Fantastic Technology or reaction to regionalism?</h1>
         <form>
           <fieldset>
-            <State handleChange={ this.handleChange } state={ state }/>
+            <State handleChange={ this.handleChange } value={ state }/>
             <br />
             <label htmlFor="">
               Name
@@ -51,7 +51,7 @@ class Form extends Component {
               Mark if you are post-graduated
             </label>
           </fieldset>
-          <AboutYou handleChange={ this.handleChange } aboutYou={ aboutYou } />
+          <AboutYou handleChange={ this.handleChange } value={ aboutYou } />
           <fieldset>
             <label htmlFor="">
               Insert your documentation:

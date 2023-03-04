@@ -2,10 +2,12 @@ import React from "react";
 
 class State extends React.Component {
   render() {
-    const { handleChange, state } = this.props;
+    let message;
+    const { handleChange, value } = this.props;
+    if (value === "TX") message = 'Texas is a great state!'
     return (<label htmlFor="">
       State
-      <select name="state" id="state" value={ state } onChange={ handleChange }>
+      <select name="state" id="state" value={ value } onChange={ handleChange }>
         <option value="">Select a state</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
@@ -21,6 +23,7 @@ class State extends React.Component {
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
       </select>
+      <span>{message ? message : ''}</span>
     </label>)
   }
 }
