@@ -1,0 +1,45 @@
+.localization-div {
+  display: flex;
+  width: 100%;
+}
+
+.localization-div label:nth-child(1) {
+  width: 60%;
+}
+
+.localization-div label:nth-child(2) {
+  width: 40%;
+}
+
+#address, #city, #state {
+  width: 98%;
+}
+
+.address-data-fieldset section p {
+  margin-bottom: 15px;
+}
+
+.radio-div {
+  background-color: rgba(240, 255, 255, 0.493);
+  color: black;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  width: fit-content;
+  font-size: 20px;
+  padding-right: 10px;
+  display: flex;
+}
+
+.radio-div label:nth-child(1) {
+  margin-right: 50px ;
+}
+
+.radio-div label {
+  display: flex;
+}
+
+.radio-div input {
+  width: 30px;
+  margin-right: 5px;
+}

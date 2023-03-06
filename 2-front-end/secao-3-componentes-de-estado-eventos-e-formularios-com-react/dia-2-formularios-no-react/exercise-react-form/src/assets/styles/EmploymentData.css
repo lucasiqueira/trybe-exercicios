@@ -1,0 +1,22 @@
+#position {
+  width: 98%;
+}
+
+#curriculum, 
+#description {
+  height: 100px;
+  width: 98%;
+}
+
+textarea::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+textarea::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.309);        /* color of the tracking area */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.597);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}

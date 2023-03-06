@@ -1,0 +1,33 @@
+.consolidated-data-section {
+  background-color: rgba(0, 0, 0, 0.267);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  height: 10%;
+}
+
+.no-show-div {
+  display: none;
+}
+
+.consolidated-data-section > div,
+.consolidated-data-section > div > section {
+  width: 100%;
+}
+
+.info-card {
+  background-color: rgba(0, 0, 0, 0.267);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.user-answer {
+  font-weight: 800;
+  color: orange;
+  margin-top: 5px;
+}
+
+.label {
+  font-size: small;
+}
