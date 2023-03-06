@@ -1,0 +1,12 @@
+footer p {
+  font-size: 20px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.478);
+}
+
+.logo {
+  width: 50px;
+  margin: 10px 15px 0 15px;
+}

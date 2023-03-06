@@ -1,0 +1,16 @@
+.id-data-div {
+  display: flex;
+  width: 100%;
+}
+
+.id-data-div label:nth-child(1) {
+  width: 70%;
+}
+
+.id-data-div label:nth-child(2) {
+  width: 28%;
+}
+
+#name, #cpf, #email {
+  width: 98%;
+}
