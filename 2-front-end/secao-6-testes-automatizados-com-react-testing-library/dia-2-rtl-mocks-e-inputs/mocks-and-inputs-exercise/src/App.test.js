@@ -1,27 +1,66 @@
-// import { render, screen } from '@testing-library/react';
-// import App from './App';
+// App.test.js
 
-// const retornaNumeroAleatorio = () => Math.floor(Math.random() * 100);
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-// const divisivelPorDois = () => (retornaNumeroAleatorio() % 2) === 0;
+import App from './App';
 
-// ...
-test("#divisivelPorDois", () => {
-  // testando quantas vezes a função foi chamada e qual seu retorno
-  let divisivelPorDois = jest
-    .fn()
-    .mockReturnValue('default value')
-    .mockReturnValueOnce('first call')
-    .mockReturnValueOnce('second call');
+afterEach(() => jest.clearAllMocks());
 
-  expect(divisivelPorDois).toHaveBeenCalledTimes(0);
+it('fetches a joke', async () => {
+  const joke = {
+    id: '7h3oGtrOfxc',
+    joke: 'Whiteboards ... are remarkable.',
+    status: 200,
+  };
+  
+  jest.spyOn(global, 'fetch');
+  global.fetch.mockResolvedValue({
+    json: jest.fn().mockResolvedValue(joke),
+  });
+  
+  render(<App />);
+  const renderedJoke = await screen.findByText('Whiteboards ... are remarkable.');
+  expect(renderedJoke).toBeInTheDocument();
+  expect(global.fetch).toBeCalledTimes(1);
+  expect(global.fetch).toBeCalledWith(
+    'https://icanhazdadjoke.com/',
+    { headers: { Accept: 'application/json' } },
+  );
+});
 
-  expect(divisivelPorDois()).toBe("first call");
-  expect(divisivelPorDois).toHaveBeenCalledTimes(1);
+it('fetches a new joke when button is clicked', async () => {
+  const joke1 = {
+    id: '7h3oGtrOfxc',
+    joke: 'Whiteboards ... are remarkable.',
+    status: 200,
+  };
 
-  expect(divisivelPorDois()).toBe("second call");
-  expect(divisivelPorDois).toHaveBeenCalledTimes(2);
+  const joke2 = {
+    id: 'xXSv492wPmb',
+    joke: 'What is red and smells like blue paint? Red paint!',
+    status: 200,
+  };
 
-  expect(divisivelPorDois()).toBe("default value");
-  expect(divisivelPorDois).toHaveBeenCalledTimes(3);
+  jest.spyOn(global, 'fetch');
+  global.fetch.mockResolvedValueOnce({
+    json: jest.fn().mockResolvedValue(joke1),
+  });
+  
+  render(<App />);
+  const newJokeButton = screen.getByRole('button', { name: 'New joke' });
+  
+  expect(await screen.findByText(joke1.joke)).toBeInTheDocument();
+  expect(screen.queryByText(joke2.joke)).not.toBeInTheDocument();
+  expect(global.fetch).toBeCalledTimes(1);
+  
+  global.fetch.mockResolvedValueOnce({
+    json: jest.fn().mockResolvedValue(joke2),
+  });
+  userEvent.click(newJokeButton);
+  
+  expect(await screen.findByText(joke2.joke)).toBeInTheDocument()
+  expect(screen.queryByText(joke1.joke)).not.toBeInTheDocument();
+  expect(global.fetch).toBeCalledTimes(2);
 });
