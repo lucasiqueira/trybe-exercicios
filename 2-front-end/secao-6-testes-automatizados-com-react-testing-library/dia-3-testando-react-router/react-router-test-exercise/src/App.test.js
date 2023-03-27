@@ -14,7 +14,7 @@ describe('teste da aplicação toda', () => {
     expect(homeTitle).toBeInTheDocument();
   });
 
-  it('deve renderizar o componente Sobre', () => {
+  it('deve renderizar o componente Sobre', async () => {
     const { history } = renderWithRouter(<App />);
 
     const aboutLink = screen.getByRole('link', { name: 'Sobre' });
@@ -24,7 +24,7 @@ describe('teste da aplicação toda', () => {
     const { pathname } = history.location;
     expect(pathname).toBe('/about');
     
-    const aboutTitle = screen.getByRole('heading',
+    const aboutTitle = await screen.findByRole('heading',
       { name: 'Você está na página Sobre' });
     expect(aboutTitle).toBeInTheDocument();
   });
