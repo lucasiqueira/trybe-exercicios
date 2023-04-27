@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+}
+
+#root {
+  background-color: rgb(33, 30, 30);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: beige;
+  gap: 12px;
+  font-size: 20px;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+form > label > input {
+  width: 500px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+fieldset > label {
+  margin: 10px
+}
