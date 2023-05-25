@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    image: ghost:1-alpine
+    ports:
+      - 2368:2368
+    networks:
+      - rede-local
+    environment:
+      - database__client=mysql
+      - database__connection__host=database
+      - database__connection__user=root
+      - database__connection__password=root
+      - database__connection__database=ghost
+    depends_on:
+      - database
+    restart: always
+  database:
+    image: mysql:5.7.40
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    restart: always
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - rede-local
+
+volumes:
+  data:
+networks:
+  rede-local:
