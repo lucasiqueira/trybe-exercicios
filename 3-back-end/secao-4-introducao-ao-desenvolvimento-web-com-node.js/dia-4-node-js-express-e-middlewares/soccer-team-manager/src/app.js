@@ -10,28 +10,33 @@ const teams = [
 
 app.use(express.json());
 
-app.get('/teams', (req, res) => res.status(200).json({ teams }));
-
-app.get('/teams/:id', (req, res) => {
-  const id = Number(req.params.id);
-  const team = teams.find(t => t.id === id);
-  if (team) {
-    res.json(team);
-  } else {
-    res.sendStatus(404);
-  }
-});
-
 const validateTeam = (req, res, next) => {
   const requiredProperties = ['nome', 'sigla'];
   if (requiredProperties.every((property) => property in req.body)) {
-    next(); // Chama o próximo middleware
+    next();
   } else {
-    res.sendStatus(400); // Ou já responde avisando que deu errado
+    res.sendStatus(400);
   }
 };
 
-// Arranja os middlewares para chamar validateTeam primeiro
+const existingId = (req, res, next) => {
+  const id = Number(req.params.id);
+  const team = teams.find(t => t.id === id);
+  if (team) {
+    next();
+  } else {
+    res.status(404).send({message: 'ID não existente na base de dados'});
+  }
+}
+
+app.get('/teams', (req, res) => res.status(200).json({ teams }));
+
+app.get('/teams/:id', existingId, (req, res) => {
+  const id = Number(req.params.id);
+  const team = teams.find(t => t.id === id);
+  res.status(200).json(team);
+});
+
 app.post('/teams', validateTeam, (req, res) => {
   const team = { id: nextId, ...req.body };
   teams.push(team);
