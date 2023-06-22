@@ -2,12 +2,14 @@ const express = require('express');
 const existingId = require('./middlewares/existingId');
 const validateTeam = require('./middlewares/validateTeams');
 const teams = require('./utils/teams');
+const apiCredentials = require('./middlewares/apiCredentials');
 
 const app = express();
 
 let nextId = 3;
 
 app.use(express.json());
+app.use(apiCredentials);
 
 app.get('/teams', (req, res) => res.status(200).json({ teams }));
 
