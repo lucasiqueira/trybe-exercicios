@@ -1,5 +1,10 @@
 const express = require('express');
-const { readMissionsData, writeNewMissionData, updateMissionData, deleteMissionsData } = require('./utils/fsUtils');
+const {
+  readMissionsData,
+  writeNewMissionData,
+  updateMissionData,
+  deleteMissionsData,
+} = require('./utils/fsUtils');
 
 const app = express();
 
