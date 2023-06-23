@@ -6,6 +6,8 @@ const {
   deleteMissionsData,
 } = require('./utils/fsUtils');
 
+require('express-async-errors');
+
 const app = express();
 
 app.use(express.json());
@@ -58,6 +60,15 @@ app.delete('/missions/:id', validateMissionId, async (req, res) => {
   await deleteMissionsData(Number(id));
 
   return res.status(204).end();
+});
+
+app.use((error, req, res, next) => {
+  console.error(error.stack);
+  next(error);
+});
+
+app.use((error, req, res, _next) => {
+  res.status(500).send({ message: 'Erro na requisição, amigo.' });
 });
 
 module.exports = app;

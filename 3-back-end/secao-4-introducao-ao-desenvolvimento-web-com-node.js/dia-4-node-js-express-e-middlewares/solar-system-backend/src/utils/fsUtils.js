@@ -4,26 +4,18 @@ const path = require('path');
 const MISSION_DATA_PATH = '../../data/missions.json';
 
 async function readMissionsData() {
-  try {
-    const data = await fs.readFile(path.resolve(__dirname, MISSION_DATA_PATH));
-    const missions = JSON.parse(data);
-    return missions;
-  } catch (error) {
-    console.error(`Erro na leitura do arquivo ${error}`);
-  }
+  const data = await fs.readFile(path.resolve(__dirname, MISSION_DATA_PATH));
+  const missions = JSON.parse(data);
+  return missions;
 }
 
 async function writeNewMissionData(newMission) {
-  try {
-    const oldMissions = await readMissionsData();
-    const newMissionWithId = { id: Date.now(), ...newMission };
-    const allMissions = JSON.stringify([...oldMissions, newMissionWithId]);
+  const oldMissions = await readMissionsData();
+  const newMissionWithId = { id: Date.now(), ...newMission };
+  const allMissions = JSON.stringify([...oldMissions, newMissionWithId]);
 
-    await fs.writeFile(path.resolve(__dirname, MISSION_DATA_PATH), allMissions);
-    return newMissionWithId;
-  } catch (error) {
-    console.error(`Erro na escrita do arquivo: ${error}`);
-  }
+  await fs.writeFile(path.resolve(__dirname, MISSION_DATA_PATH), allMissions);
+  return newMissionWithId;
 }
 
 async function updateMissionData(id, updatedMissionData) {
@@ -35,14 +27,9 @@ async function updateMissionData(id, updatedMissionData) {
   }, []);
 
   const updateData = JSON.stringify(updatedMissions);
-
-  try {
-    await fs.writeFile(path.resolve(__dirname, MISSION_DATA_PATH), updateData);
-    console.log(`Atualizou a missão com o id ${id}`);
-    return updatedMission;
-  } catch (error) {
-    console.error(`Erro na atualização do arquivo: ${error}`);
-  }
+  await fs.writeFile(path.resolve(__dirname, MISSION_DATA_PATH), updateData);
+  console.log(`Atualizou a missão com o id ${id}`);
+  return updatedMission;
 }
 
 async function deleteMissionsData(id) {
@@ -51,12 +38,8 @@ async function deleteMissionsData(id) {
 
   const updatedData = JSON.stringify(updatedMissions);
 
-  try {
-    await fs.writeFile(path.resolve(__dirname, MISSION_DATA_PATH), updatedData);
-    console.log(`Deletou a missão com o id ${id}`);
-  } catch (error) {
-    console.error(`Erro na deleção da missão: ${error}`);
-  }
+  await fs.writeFile(path.resolve(__dirname, MISSION_DATA_PATH), updatedData);
+  console.log(`Deletou a missão com o id ${id}`);
 }
 
 module.exports = {
