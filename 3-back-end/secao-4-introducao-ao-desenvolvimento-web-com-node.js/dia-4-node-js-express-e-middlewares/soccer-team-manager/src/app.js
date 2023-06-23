@@ -1,5 +1,8 @@
 const express = require('express');
 require('express-async-errors');
+const morgan = require('morgan');
+const cors = require('cors');
+const helmet = require("helmet");
 
 const existingId = require('./middlewares/existingId');
 const validateTeam = require('./middlewares/validateTeams');
@@ -11,6 +14,10 @@ const app = express();
 let nextId = 3;
 
 app.use(express.json());
+app.use(express.static('./images'));
+app.use(morgan('dev'));
+app.use(cors());
+app.use(helmet());
 app.use(apiCredentials);
 
 app.get('/teams', (req, res) => res.status(200).json({ teams }));
@@ -54,5 +61,7 @@ app.delete('/teams/:id', existingId, (req, res) => {
   }
   res.sendStatus(204);
 });
+
+app.use((req, res) => res.sendStatus(404));
 
 module.exports = app;
