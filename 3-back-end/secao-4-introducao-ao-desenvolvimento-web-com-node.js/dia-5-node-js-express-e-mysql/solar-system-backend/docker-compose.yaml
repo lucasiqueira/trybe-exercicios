@@ -1,10 +1,16 @@
-version: '3'
+version: '3.7'
+
 services:
-  database:
-    image: mysql:8.0.29
+  db:
+    image: mysql:8.0.21
+    platform: linux/amd64
+    container_name: database
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: trybestelar
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # variável de ambiente do arquivo .env
+      MYSQL_DATABASE: ${MYSQL_DATABASE} # variável de ambiente do arquivo .env
     ports:
-      - "33061:3306"
+      # porta do localhost:porta do container
+      - ${MYSQL_PORT}:3306
+    env_file:
+      - .env # arquivo de variáveis de ambiente
