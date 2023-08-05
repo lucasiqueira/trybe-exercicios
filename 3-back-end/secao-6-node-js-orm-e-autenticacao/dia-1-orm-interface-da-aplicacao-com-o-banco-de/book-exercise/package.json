@@ -1,0 +1,22 @@
+{
+  "name": "book-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1",
+    "mysql2": "2.1.0",
+    "portfinder": "^1.0.32",
+    "sequelize": "6.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.15",
+    "sequelize-cli": "6.2.0"
+  }
+}
