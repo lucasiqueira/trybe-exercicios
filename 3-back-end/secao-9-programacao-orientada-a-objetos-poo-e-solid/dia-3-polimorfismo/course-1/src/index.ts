@@ -5,16 +5,24 @@
 abstract class Character {
   talk(): void {};
   specialMove(): void {};
+  static present (character: Character) {
+    character.talk();
+    character.specialMove();
+  }
 }
 
 // 2 - Crie a classe concreta MeleeCharacter que estenda Character e sobrescreva os métodos abstratos dessa classe. A lógica da função em si pode ser simulada - retorne um console.log() dizendo o que ela faz!
 
 class MeleeCharacter extends Character {
+  constructor(private _name: string, private _specialMoveName: string) {
+    super();
+  }
+
   talk(): void {
-    console.log('Melle conversa!');
+    console.log(`${this._name} conversa!`);
   }
   specialMove(): void {
-    console.log('Passo secreto do Melee!');
+    console.log(`Passo secreto do ${this._name} é o ${this._specialMoveName}!`);
     
   }
 }
@@ -22,22 +30,30 @@ class MeleeCharacter extends Character {
 // 3 - Crie a classe concreta LongRangeCharacter que estenda Character e sobrescreva os métodos abstratos dessa classe.
 
 class LongRangeCharacter extends Character {
+  constructor(private _name: string, private _specialMoveName: string) {
+    super();
+  }
+
+  
   talk(): void {
-    console.log('Personagem de alto alcance conversa.');
+    console.log(`Personagem de alto alcance ${this._name} conversa.`);
   }
 
   specialMove(): void {
-    console.log('Passo secreto do personagem de longo alcance.');
+    console.log(`Passo secreto do personagem de longo alcance ${this._name} é o ${this._specialMoveName}.`);
   }
 }
 
 // 4 - Agora instancie as classes filhas com os personagens Yoshi e Samus, com seus respectivos specialMoveName e chame os métodos talk e specialMove para apresentar o personagem e seus respectivos ataques especiais.
 
-const yoshi = new MeleeCharacter();
-const samus = new LongRangeCharacter();
+const yoshi = new MeleeCharacter('Yoshi', 'Fighting Rim');
+const samus = new LongRangeCharacter('Samus', 'Gentle kill');
 
-yoshi.talk();
-yoshi.specialMove();
+Character.present(yoshi);
+Character.present(samus);
 
-samus.talk();
-samus.specialMove();
+// 1 - Continuando com o exercício anterior do jogo de luta Super Smash Bros, vamos aplicar uma refatoração com base no conteúdo acima. Crie um método estático que receba como parâmetro character: Character e, dentro dele, chame os métodos talk e specialMove para apresentar o personagem.
+
+
+
+// 2 - Agora, ao invés de acionarmos os métodos talk e specialMove individualmente a partir das instâncias, acione-os por meio do método estático criado no exercício anterior.
