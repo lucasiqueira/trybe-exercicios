@@ -34,6 +34,3 @@ def validate_email(email):
         )
 
     return None
-
-
-validate_email('lucas@vi.com')
