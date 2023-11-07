@@ -1,6 +1,7 @@
 package com.trybe.lucasiqueira.GerenciadorDePodcasts;
 
 import java.util.Random;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,19 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/podcasts")
 public class PodcastRestController {
 
+  private PodcastService service;
+
+  @Autowired
+  public PodcastRestController(PodcastService service) {
+    this.service = service;
+  }
+
   @GetMapping
   public String getRoot() {
     return "Yay Podcasts!";
-  }
-
-  Podcast findPodcastById(Integer id) {
-    Podcast podcast = new Podcast();
-    podcast.setId(id);
-    podcast.setName("Meu podcast");
-    podcast.setUrl("http://www.meupodcast.com.br");
-    podcast.setSecretToken("super-secret-token-123");
-
-    return podcast;
   }
 
   @GetMapping("/{id}")
@@ -36,7 +34,7 @@ public class PodcastRestController {
       return ResponseEntity.notFound().build();
     }
 
-    Podcast podcast = findPodcastById(id);
+    Podcast podcast = service.findPodcastById(id);
 
     PodcastDto podcastDto = new PodcastDto(
       podcast.getId(), podcast.getName(), podcast.getUrl()
@@ -50,22 +48,9 @@ public class PodcastRestController {
     return String.format("Você buscou por Podcasts com o título: %s", title);
   }
 
-  Podcast createPodcast(PodcastCreationDto newPodcastDto) {
-    Podcast podcast = new Podcast();
-    // Vamos fingir que estamos salvando o podcast
-    // ao atribuir um ID aleatório a ele
-    podcast.setId(new Random().nextInt(0, 1000));
-    podcast.setSecretToken("super-secret-token-123");
-
-    podcast.setName(newPodcastDto.name());
-    podcast.setUrl(newPodcastDto.url());
-
-    return podcast;
-  }
-
   @PostMapping
   public ResponseEntity<PodcastDto> newPodcast(@RequestBody PodcastCreationDto newPodcast) {
-    Podcast podcast = createPodcast(newPodcast);
+    Podcast podcast = service.createPodcast(newPodcast);
 
     PodcastDto podcastDto = new PodcastDto(
       podcast.getId(), podcast.getName(), podcast.getUrl()
