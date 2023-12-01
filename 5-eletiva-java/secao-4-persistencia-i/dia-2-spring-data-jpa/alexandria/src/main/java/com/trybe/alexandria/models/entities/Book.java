@@ -13,7 +13,9 @@ public class Book {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   private String title;
+
   private String genre;
 
   public Book() {
@@ -48,4 +50,5 @@ public class Book {
   public void setGenre(String genre) {
     this.genre = genre;
   }
+
 }
